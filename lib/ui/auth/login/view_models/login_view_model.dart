@@ -1,0 +1,19 @@
+import 'package:flutter_curso_mvvm/data/repositories/auth/auth_repository.dart';
+import 'package:flutter_curso_mvvm/utils/result.dart';
+
+class LoginViewModel {
+  final AuthRepository _authRepository;
+
+  const LoginViewModel({required AuthRepository authRepository})
+    : _authRepository = authRepository;
+
+  Future<Result<void>> login((String, String) credentials) async {
+    final (username, password) = credentials;
+    final result = await _authRepository.login(
+      username: username,
+      password: password,
+    );
+    print('Login result: $result');
+    return result;
+  }
+}
