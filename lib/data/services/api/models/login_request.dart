@@ -1,7 +1,7 @@
 class LoginRequest {
   final String username;
   final String password;
-  final String expireInMins;
+  final int expireInMins;
 
   const LoginRequest({
     required this.username,
@@ -21,7 +21,7 @@ class LoginRequest {
     return LoginRequest(
       username: json['username'] ?? '',
       password: json['password'] ?? '',
-      expireInMins: json['expireInMins'] ?? '',
+      expireInMins: json['expireInMins'] ?? 0,
     );
   }
 }
