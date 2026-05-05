@@ -7,7 +7,7 @@ class LoginViewModel {
   const LoginViewModel({required AuthRepository authRepository})
     : _authRepository = authRepository;
 
-  Future<Result<void>> login((String, String) credentials) async {
+  Future<Result<void>> login((String, String) credentials, String password) async {
     final (username, password) = credentials;
     final result = await _authRepository.login(
       username: username,
