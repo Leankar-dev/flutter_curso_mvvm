@@ -16,7 +16,6 @@ class LoginViewModel {
       username: username,
       password: password,
     );
-    print('Login result: $result');
     return result;
   }
 }
